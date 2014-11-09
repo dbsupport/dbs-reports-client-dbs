@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration debug="true">
+  <!-- Errors were reported during translation. -->
+  <!-- No class found for appender @t.log4j.appenders@ -->
+  <!-- Could not find transformer for null -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>@t.logback.stdout.level@</level>
+        </filter>    
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] %-5p %c: %m%n</pattern>
+        </encoder>
+    </appender> 
+  
+    <root level="@t.logback.root.level@">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
